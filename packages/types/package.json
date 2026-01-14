@@ -1,0 +1,19 @@
+{
+  "name": "@harmony-central/types",
+  "version": "0.1.0",
+  "description": "Shared TypeScript types for Harmony Central",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "test": "echo \"No tests yet\" && exit 0",
+    "lint": "echo \"Lint not configured\" && exit 0"
+  },
+  "keywords": ["types", "typescript"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@harmony-central/mobile",
+  "version": "0.1.0",
+  "description": "Cross-platform mobile app for Harmony Central",
+  "main": "index.js",
+  "scripts": {
+    "dev": "echo 'Start React Native dev server' && exit 0",
+    "build": "echo 'Build React Native app' && exit 0",
+    "test": "echo \"No tests yet\" && exit 0",
+    "lint": "echo \"Lint not configured\" && exit 0"
+  },
+  "keywords": ["react-native", "mobile"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@harmony-central/types": "0.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  },
+  "note": "Full React Native setup requires: react-native init or expo init. This is a placeholder package structure."
+}
