@@ -1,4 +1,4 @@
-import { Song, ChordProgression } from "@harmony-central/types";
+import { Song } from "@harmony-central/types";
 
 /**
  * In-memory song repository

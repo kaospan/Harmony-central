@@ -9,7 +9,6 @@ import {
   createRateLimiter,
   rateLimitConfigs,
 } from "../middleware/rateLimiter";
-import { ComparisonRequest } from "@harmony-central/types";
 
 /**
  * Create song routes
@@ -19,6 +18,27 @@ export function createSongRoutes(
   harmonicService: HarmonicAnalysisService
 ): Router {
   const router = Router();
+
+  /**
+   * GET /songs/search - Search songs
+   */
+  router.get(
+    "/search",
+    createRateLimiter(rateLimitConfigs.general),
+    (req: Request, res: Response) => {
+      const query = req.query.q as string;
+      if (!query) {
+        throw new ValidationError("Search query parameter 'q' is required");
+      }
+
+      const songs = songRepo.searchSongs(query);
+      res.json({
+        query,
+        count: songs.length,
+        songs,
+      });
+    }
+  );
 
   /**
    * GET /songs - Get all songs
@@ -81,27 +101,6 @@ export function createSongRoutes(
       });
 
       res.status(201).json(song);
-    }
-  );
-
-  /**
-   * GET /songs/search - Search songs
-   */
-  router.get(
-    "/search",
-    createRateLimiter(rateLimitConfigs.general),
-    (req: Request, res: Response) => {
-      const query = req.query.q as string;
-      if (!query) {
-        throw new ValidationError("Search query parameter 'q' is required");
-      }
-
-      const songs = songRepo.searchSongs(query);
-      res.json({
-        query,
-        count: songs.length,
-        songs,
-      });
     }
   );
 

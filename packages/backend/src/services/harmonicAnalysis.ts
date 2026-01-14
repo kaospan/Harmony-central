@@ -3,7 +3,6 @@ import {
   ChordProgression,
   Cadence,
   CadenceType,
-  ChordQuality,
   SimilarityScore,
 } from "@harmony-central/types";
 
