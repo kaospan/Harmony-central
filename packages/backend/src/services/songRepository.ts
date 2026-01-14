@@ -1,4 +1,4 @@
-import { Song } from "@harmony-central/types";
+import { Song, ChordQuality } from "@harmony-central/types";
 
 /**
  * In-memory song repository
@@ -72,10 +72,10 @@ export class SongRepository {
       progression: {
         id: "prog-1",
         chords: [
-          { romanNumeral: "I", quality: "major" as any },
-          { romanNumeral: "V", quality: "major" as any },
-          { romanNumeral: "vi", quality: "minor" as any },
-          { romanNumeral: "IV", quality: "major" as any },
+          { romanNumeral: "I", quality: ChordQuality.Major },
+          { romanNumeral: "V", quality: ChordQuality.Major },
+          { romanNumeral: "vi", quality: ChordQuality.Minor },
+          { romanNumeral: "IV", quality: ChordQuality.Major },
         ],
         key: "C major",
         timeSignature: "4/4",
@@ -94,10 +94,10 @@ export class SongRepository {
       progression: {
         id: "prog-2",
         chords: [
-          { romanNumeral: "I", quality: "major" as any },
-          { romanNumeral: "V", quality: "major" as any },
-          { romanNumeral: "vi", quality: "minor" as any },
-          { romanNumeral: "IV", quality: "major" as any },
+          { romanNumeral: "I", quality: ChordQuality.Major },
+          { romanNumeral: "V", quality: ChordQuality.Major },
+          { romanNumeral: "vi", quality: ChordQuality.Minor },
+          { romanNumeral: "IV", quality: ChordQuality.Major },
         ],
         key: "E major",
         timeSignature: "4/4",
@@ -116,10 +116,10 @@ export class SongRepository {
       progression: {
         id: "prog-3",
         chords: [
-          { romanNumeral: "I", quality: "major" as any },
-          { romanNumeral: "V", quality: "major" as any },
-          { romanNumeral: "vi", quality: "minor" as any },
-          { romanNumeral: "IV", quality: "major" as any },
+          { romanNumeral: "I", quality: ChordQuality.Major },
+          { romanNumeral: "V", quality: ChordQuality.Major },
+          { romanNumeral: "vi", quality: ChordQuality.Minor },
+          { romanNumeral: "IV", quality: ChordQuality.Major },
         ],
         key: "A major",
         timeSignature: "4/4",
@@ -138,10 +138,10 @@ export class SongRepository {
       progression: {
         id: "prog-4",
         chords: [
-          { romanNumeral: "vi", quality: "minor" as any },
-          { romanNumeral: "IV", quality: "major" as any },
-          { romanNumeral: "I", quality: "major" as any },
-          { romanNumeral: "V", quality: "major" as any },
+          { romanNumeral: "vi", quality: ChordQuality.Minor },
+          { romanNumeral: "IV", quality: ChordQuality.Major },
+          { romanNumeral: "I", quality: ChordQuality.Major },
+          { romanNumeral: "V", quality: ChordQuality.Major },
         ],
         key: "B minor",
         timeSignature: "4/4",

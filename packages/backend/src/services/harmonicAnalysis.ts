@@ -47,17 +47,16 @@ export class HarmonicAnalysisService {
     const rn1 = chord1.romanNumeral.toUpperCase();
     const rn2 = chord2.romanNumeral.toUpperCase();
 
-    // Authentic cadence: V-I or V7-I
+    // Authentic cadence: V-I or V7-I (but not V-II, V-III, etc.)
     if (
       (rn1.startsWith("V") || rn1.startsWith("V7")) &&
-      rn2.startsWith("I") &&
-      !rn2.includes("I")
+      rn2 === "I"
     ) {
       return { type: CadenceType.Authentic, strength: 0.9 };
     }
 
     // Plagal cadence: IV-I
-    if (rn1.startsWith("IV") && rn2.startsWith("I")) {
+    if (rn1.startsWith("IV") && rn2 === "I") {
       return { type: CadenceType.Plagal, strength: 0.7 };
     }
 
@@ -66,8 +65,8 @@ export class HarmonicAnalysisService {
       return { type: CadenceType.Deceptive, strength: 0.6 };
     }
 
-    // Half cadence: ends on V
-    if (rn2.startsWith("V") && !rn2.includes("I")) {
+    // Half cadence: ends on V (but not VII)
+    if (rn2 === "V" || rn2.startsWith("V7")) {
       return { type: CadenceType.HalfCadence, strength: 0.5 };
     }
 
